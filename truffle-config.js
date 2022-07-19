@@ -3,10 +3,25 @@ const path = require("path");
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
-  contracts_build_directory: path.join(__dirname, "client/src/contracts"),
+  contracts_build_directory: path.join(__dirname, "./artifacts"),
   networks: {
     develop: {
       port: 8545
     }
-  }
+  },
+
+  // Configure your compilers
+  compilers: {
+    solc: {
+      version: "0.8.4",    // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
+       //settings: {          // See the solidity docs for advice about optimization and evmVersion
+        //optimizer: {
+          //enabled: true,
+          //runs: 1_000_000
+        //},
+        //evmVersion: "istanbul"
+       //}
+    }
+  },
 };
